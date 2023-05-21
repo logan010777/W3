@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,7 +38,7 @@
   <body>
     <!--header-->
     <header class="w3-black w3-bottombar">
-      <nav class="w3-bar w3-padding-32 w3-display-container">
+      <nav class="w3-bar w3-padding-32">
         <div class="links" id="links">
           <a href="./" class="ha w3-mobile">Home</a>
           <a href="./products.htm" class="ha w3-mobile">Products</a>
@@ -128,11 +128,16 @@
 
     <!--hamburger-->
     <script>
+      let state = 0;
+
       function hamburger() {
-        if (document.getElementById("links").style.display === "none") {
-          document.getElementById("links").style.display = "block";
+        let links = document.getElementById("links");
+        if (state === 0) {
+          links.style.display = "block";
+          state = 1;
         } else {
-          document.getElementById("links").style.display = "none";
+          links.style.display = "none";
+          state = 0;
         }
       }
     </script>
