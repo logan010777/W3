@@ -44,6 +44,9 @@
           padding: 10px !important;
         }
       }
+      .transition {
+        transition: 1s ease-in;
+      }
     </style>
   </head>
   <body>
@@ -68,8 +71,8 @@
         <a
           href="javascript:void(0);"
           onclick="hamburger()"
-          class="w3-xxlarge w3-right hamburger w3-display-topright w3-margin-right"
-          ><i class="fa-solid fa-bars"></i
+          class="w3-xxlarge w3-right hamburger w3-display-topright w3-margin-right transition"
+          ><i class="fa-solid fa-bars" id="icon"></i
         ></a>
       </nav>
       <div>
@@ -121,14 +124,16 @@
     <!--hamburger-->
     <script>
       let state = 0;
-
+      let icon = document.getElementById("icon");
       function hamburger() {
         let links = document.getElementById("links");
         if (state === 0) {
           links.style.display = "block";
+          icon.classList.replace("fa-bars", "fa-xmark");
           state = 1;
         } else {
           links.style.display = "none";
+          icon.classList.replace("fa-xmark", "fa-bars");
           state = 0;
         }
       }
