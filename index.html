@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,9 +15,25 @@
       .ha:hover {
         background-color: dimgrey;
       }
+      .hamburger {
+        display: none;
+      }
+
       @media screen and (max-width: 600px) {
         .im {
           height: 100px !important;
+        }
+        .links {
+          display: none;
+          width: 50%;
+          text-align: left;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        .hamburger {
+          display: block;
         }
       }
     </style>
@@ -25,10 +41,20 @@
   <body>
     <!--header-->
     <header class="w3-black w3-bottombar">
-      <nav class="w3-bar w3-padding-32">
-        <a href="./" class="ha w3-mobile w3-center">Home</a>
-        <a href="./products.htm" class="ha w3-mobile w3-center">Products</a>
-        <a href="./about.html" class="ha w3-mobile w3-center">About us</a>
+      <nav class="w3-bar w3-padding-32 w3-display-container">
+        <div class="links" id="links">
+          <a href="./" class="ha w3-mobile">Home</a>
+          <a href="./products.htm" class="ha w3-mobile">Products</a>
+          <a href="./about.html" class="ha w3-mobile">About us</a>
+          <a href="album.html" class="ha w3-mobile">Album</a>
+          <a href="form.html" class="ha w3-mobile">Form</a>
+        </div>
+        <a
+          href="javascript:void(0);"
+          onclick="hamburger()"
+          class="w3-xxlarge w3-right hamburger w3-display-topright w3-margin-right"
+          ><i class="fa-solid fa-bars"></i
+        ></a>
       </nav>
       <div>
         <img
@@ -40,74 +66,82 @@
       </div>
     </header>
 
-    <main>
+    <section>
       <!--table-->
-      <section class="w3-display-container">
-        <div class="w3-left w3-margin-top" style="width: 50%">
-          <table
-            class="w3-table-all w3-centered w3-hoverable w3-card"
-            style="width: 100%"
-          >
-            <thead>
-              <tr class="w3-black">
-                <th>name</th>
-                <th>family</th>
-                <th>point</th>
-              </tr>
-            </thead>
-            <tr class="w3-hover-black">
-              <td>james</td>
-              <td>morgan</td>
-              <td>70</td>
+      <article style="width: 100%">
+        <table
+          class="w3-table-all w3-centered w3-hoverable w3-card w3-left w3-margin-left"
+          style="width: 50%"
+        >
+          <thead>
+            <tr class="w3-black">
+              <th>name</th>
+              <th>family</th>
+              <th>point</th>
             </tr>
-            <tr class="w3-hover-black">
-              <td>nina</td>
-              <td>daykon</td>
-              <td>60</td>
-            </tr>
-            <tr class="w3-hover-black">
-              <td>kaka</td>
-              <td>herbin</td>
-              <td>40</td>
-            </tr>
-            <tr class="w3-hover-black">
-              <td>opana</td>
-              <td>youngee</td>
-              <td>100</td>
-            </tr>
-          </table>
-        </div>
+          </thead>
+          <tr class="w3-hover-black">
+            <td>james</td>
+            <td>morgan</td>
+            <td>70</td>
+          </tr>
+          <tr class="w3-hover-black">
+            <td>nina</td>
+            <td>daykon</td>
+            <td>60</td>
+          </tr>
+          <tr class="w3-hover-black">
+            <td>kaka</td>
+            <td>herbin</td>
+            <td>40</td>
+          </tr>
+          <tr class="w3-hover-black">
+            <td>opana</td>
+            <td>youngee</td>
+            <td>100</td>
+          </tr>
+        </table>
 
         <!--panel-->
+
         <div
-          class="w3-panel w3-yellow w3-display-container w3-right w3-margin-top"
-          id="panel"
-          style="width: 49.5%"
+          class="w3-panel w3-pale-yellow w3-right w3-margin-right w3-padding-24 w3-display-container"
+          style="width: 40%"
         >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            saepe corrupti dignissimos tenetur ut cumque! Magni delectus, totam
-            ad ea fugit quod tempore neque id et minima voluptatem voluptatibus
-            velit.
-          </p>
-          <button
-            class="w3-display-topright w3-red w3-button w3-opacity w3-padding-small"
-            onclick='document.getElementById("panel").classList.add("w3-hide");'
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quasi,
+          rerum repellendus a, accusantium aperiam nam aliquam distinctio
+          reiciendis cupiditate vel blanditiis, saepe veritatis fugiat atque
+          assumenda! Facilis, pariatur error?
+          <span
+            onclick="this.parentElement.style.display='none'"
+            class="w3-button w3-display-topright"
+            >&times;</span
           >
-            &times
-          </button>
         </div>
-      </section>
-    </main>
-    <figure class="w3-display-bottommiddle">
-      <figcaption>code example</figcaption>
-      <code class="w3-red"> $a = "out put 1"; </code>
-      <kbd class="w3-green">S+alt</kbd>
-      <samp class="w3-yellow">the var a is undefiend</samp>
-      <p>
-        we created variable <var>X</var> and <var>Y</var> so
-        <var>X</var>&times<var>Y</var> equal =? .
-      </p>
-    </figure>
+      </article>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia
+          doloremque exercitationem sunt voluptate quos earum harum. Quae eos
+          nisi minima nihil libero ipsa nulla, exercitationem, incidunt quia sed
+          dolores rem?
+        </p>
+      </div>
+    </section>
+
+    <!--hamburger-->
+    <script>
+      function hamburger() {
+        if (document.getElementById("links").style.display === "none") {
+          document.getElementById("links").style.display = "block";
+        } else {
+          document.getElementById("links").style.display = "none";
+        }
+      }
+    </script>
+    <script
+      src="https://kit.fontawesome.com/76aaa4fba5.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
